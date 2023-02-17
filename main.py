@@ -3,7 +3,7 @@ from coffee_option import MENU
 from coffee_option import resources
 
 
-def report_machine(money):
+def report_machine():
     """When the user enters “report” to the prompt, a report should be generated that shows
     the current resource values."""
     print(f"Water: {resources['water']}ml\n"
@@ -80,7 +80,7 @@ def machine_operation():
     options = ['espresso', 'latte', 'cappuccino', 'report', 'off']
     right_value = True
     machine_on = True
-    money_received = 0.0
+
     while machine_on:
         while right_value:
             option = input("☕ What would you like? (espresso/latte/cappuccino):").lower()
@@ -89,7 +89,7 @@ def machine_operation():
             else:
                 print ("Sorry, your have to Type (espresso/latte/cappuccino): ")
         if option == "report":
-            report_machine(money_received)
+            report_machine()
         elif option == 'off':
                 machine_on = False
         else:
